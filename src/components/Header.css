@@ -1,0 +1,14 @@
+/* App.css or Header.css */
+.App-header {
+    position: fixed; /* Fix the header */
+    top: 0; /* Position it at the top */
+    width: 100%; /* Full width */
+    background-color: #fff; /* Set background color */
+    z-index: 1000; /* Ensure it stays on top */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  }
+  
+  main {
+    margin-top: 60px; /* Adjust for header height to avoid overlap */
+  }
+  
