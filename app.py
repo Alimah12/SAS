@@ -1,12 +1,81 @@
+# src/app.py
 from flask import Flask, request, jsonify
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from flask_cors import CORS
+import json
+import threading
+import time
+import os
 
 app = Flask(__name__)
 CORS(app)
+
+# In-memory database for users
+users = {}
+
+# Backup file path
+backup_file_path = 'backup_users.json'
+
+def save_backup():
+    """Function to save user data to a backup file."""
+    with open(backup_file_path, 'w') as backup_file:
+        json.dump(users, backup_file)
+    print(f"Backup saved to {backup_file_path}")
+
+def backup_scheduler():
+    """Scheduler that runs in a separate thread to periodically back up data."""
+    while True:
+        save_backup()
+        time.sleep(3600)  # Backup every hour
+
+# Start the backup scheduler in a separate thread
+backup_thread = threading.Thread(target=backup_scheduler, daemon=True)
+backup_thread.start()
+
+@app.route('/signup', methods=['POST'])
+def signup():
+    data = request.json
+    username = data.get('username')
+    email = data.get('email')
+    password = data.get('password')
+
+    if username in users:
+        return jsonify({"error": "Username already exists."}), 400
+
+    users[username] = {
+        "email": email,
+        "password": password  # In a real application, store hashed passwords
+    }
+    
+    return jsonify({"message": "User registered successfully!"}), 201
+
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.json
+    username = data.get('username')
+    password = data.get('password')
+
+    user = users.get(username)
+    if user and user['password'] == password:
+        return jsonify({"message": "Login successful!"}), 200
+
+    return jsonify({"error": "Invalid username or password."}), 401
+
+# Endpoint to fetch user profile data
+@app.route('/profile/<username>', methods=['GET'])
+def get_profile(username):
+    user = users.get(username)
+    if not user:
+        return jsonify({"error": "User not found."}), 404
+
+    return jsonify({
+        "username": username,
+        "email": user['email']
+        # You can add more user fields here as needed
+    }), 200
 
 model = None
 
@@ -110,4 +179,7 @@ def predict():
     })
 
 if __name__ == '__main__':
+    if not os.path.exists(backup_file_path):
+        # Create an empty backup file if it doesn't exist
+        save_backup()
     app.run(debug=True)
