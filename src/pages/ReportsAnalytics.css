@@ -1,0 +1,177 @@
+/* src/pages/ReportsAnalytics.css */
+
+.reports-analytics-container {
+  padding: 40px 60px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f7;
+  color: #333;
+}
+
+.reports-analytics-container h1 {
+  text-align: center;
+  color: #2C3E50;
+  margin-bottom: 20px;
+  font-size: 2.8em;
+}
+
+.introduction {
+  text-align: center;
+  color: #555;
+  font-size: 1.2em;
+  margin-bottom: 50px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.filter-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 60px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.filter-section h2 {
+  color: #16A085;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2em;
+}
+
+.filter-controls {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.filter-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.filter-control label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #2C3E50;
+  font-size: 1.1em;
+}
+
+.filter-control select {
+  width: 200px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #ECF0F1;
+  color: #2C3E50;
+  font-size: 1em;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.filter-control select:hover,
+.filter-control select:focus {
+  border: 1px solid #16A085;
+  box-shadow: 0 0 8px rgba(22, 160, 133, 0.5);
+  outline: none;
+}
+
+.report-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 60px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.report-section h2 {
+  color: #2980B9;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2em;
+}
+
+.soil-health-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 25px;
+}
+
+.soil-health-table {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.soil-health-table th, .soil-health-table td {
+  border: 1px solid #ddd;
+  padding: 14px;
+  text-align: center;
+  font-size: 1em;
+}
+
+.soil-health-table th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+}
+
+.chart-explanation {
+  margin-top: 25px;
+  font-size: 1em;
+  color: #555;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.chart-explanation strong {
+  color: #2C3E50;
+}
+
+
+@media (min-width: 992px) {
+  .soil-health-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .soil-health-table {
+    width: 45%;
+  }
+
+  .filter-controls {
+    gap: 120px;
+  }
+
+  .filter-control select {
+    width: 220px;
+  }
+}
+
+@media (max-width: 991px) {
+  .soil-health-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .soil-health-table {
+    width: 100%;
+  }
+
+  .filter-controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .filter-control select {
+    width: 100%;
+  }
+}
