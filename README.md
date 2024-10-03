@@ -72,5 +72,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 >>>>>>> e1a7088dd49732eac09a23c984c4d450e26a2a67
 "# smartAgric_system" 
-"# SmartAgricSystem" 
 "# SAS" 
