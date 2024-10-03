@@ -2,6 +2,33 @@ import React from 'react';
 import './SoilManagement.css'; // Ensure this file exists and is correctly referenced
 
 function SoilManagement() {
+  const tips = [
+    {
+      title: "Regular Soil Testing",
+      description: "Monitor nutrient levels and pH to maintain soil health."
+    },
+    {
+      title: "Use Organic Matter",
+      description: "Incorporate compost or manure to enhance soil structure."
+    },
+    {
+      title: "Irrigation Practices",
+      description: "Implement efficient irrigation to prevent erosion and runoff."
+    },
+    {
+      title: "Crop Rotation",
+      description: "Rotate crops to improve soil fertility and prevent pests."
+    },
+    {
+      title: "Cover Cropping",
+      description: "Plant cover crops to protect soil and improve its organic content."
+    },
+    {
+      title: "Mulching",
+      description: "Use mulch to retain moisture and suppress weeds."
+    }
+  ];
+
   return (
     <div className="soil-management-container">
       <h1>Soil Management</h1>
@@ -10,12 +37,14 @@ function SoilManagement() {
       </p>
       <section className="soil-tips">
         <h2>Best Practices</h2>
-        <ul>
-          <li>Regular soil testing to monitor nutrient levels and pH.</li>
-          <li>Use of organic matter to improve soil structure.</li>
-          <li>Proper irrigation practices to avoid soil erosion.</li>
-          <li>Rotating crops to enhance soil fertility.</li>
-        </ul>
+        <div className="tips-container">
+          {tips.map((tip, index) => (
+            <div key={index} className="tip-card">
+              <h3>{tip.title}</h3>
+              <p>{tip.description}</p>
+            </div>
+          ))}
+        </div>
       </section>
       <section className="testing-methods">
         <h2>Soil Testing Methods</h2>

@@ -1,0 +1,40 @@
+.soil-management-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #3c763d;
+  }
+  
+  h2 {
+    margin-top: 20px;
+    color: #5bc0de;
+  }
+  
+  .tips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .tip-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    flex: 1 1 calc(33.333% - 15px); /* Three cards in a row */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .tip-card:hover {
+    transform: scale(1.05);
+  }
+  
+  p {
+    color: #666;
+  }
+  

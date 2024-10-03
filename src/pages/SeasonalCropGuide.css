@@ -1,0 +1,70 @@
+/* Background and container styling */
+.seasonal-guide-container {
+    background-color: #f8f4eb;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Styling the header */
+  h1 {
+    text-align: center;
+    color: #2f855a;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Paragraph styling */
+  p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  /* Table styling */
+  .seasonal-table {
+    width: 100%;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #38a169;
+    color: white;
+  }
+  
+  td {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Table row hover effect */
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Table alternate row background color */
+  tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Adding a textured background to the page */
+  body {
+    background: url('https://www.transparenttextures.com/patterns/white-diamond.png');
+    background-color: #e0e0e0;
+  }
+  
