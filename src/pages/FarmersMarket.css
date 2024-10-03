@@ -1,0 +1,28 @@
+.farmers-market-container {
+    padding: 20px;
+    background-color: #f9fafb;
+  }
+  
+  .market-card {
+    border-radius: 10px;
+    transition: transform 0.2s;
+  }
+  
+  .market-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .market-carousel {
+    margin-bottom: 20px;
+  }
+  
+  .top-market-card {
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.2s;
+  }
+  
+  .top-market-card:hover {
+    transform: scale(1.05);
+  }
+  
